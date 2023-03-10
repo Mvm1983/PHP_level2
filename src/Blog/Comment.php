@@ -2,7 +2,7 @@
 
 namespace mvm\less1\Blog;
 
-class Comments
+class Comment
 {
     public function __construct(
         private UUID $uuid,

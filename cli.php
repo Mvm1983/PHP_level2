@@ -6,7 +6,7 @@ use mvm\less1\blog\Commands\CreateUserCommand;
 use mvm\less1\Blog\Post;
 use mvm\less1\Person\Name;
 use mvm\less1\Blog\User;
-use mvm\less1\Blog\comments;
+use mvm\less1\Blog\comment;
 use mvm\less1\Blog\Exceptions\UserNotFoundException;
 use mvm\less1\Blog\Repositories\UsersRepository\SqliteUsersRepository;
 use mvm\less1\Blog\UUID;
@@ -17,6 +17,7 @@ use mvm\less1\Blog\Repositories\PostsRepository\SqlitePostsRepository;
 //Создаём объект подключения к SQLite
 $connection = new PDO('sqlite:' . __DIR__ . '/blog.sqlite');
 
+/*
 //Создание комментов
 $usersRepository = new SqliteUsersRepository($connection);
 $postsRepository = new SqlitePostsRepository($connection);
@@ -24,18 +25,24 @@ $commentsRepository = new SqliteCommentsRepository($connection);
 
 $user = $usersRepository->get(new UUID("da75dfb1-b22e-49b8-a63d-0402bb9569a7"));
 
+echo $user;
+
 $post = $postsRepository->get(new UUID("c7e767fc-2dc7-4400-9b1c-21c3ce2b2ee5"));
+
+print_r($post);
 
 $faker = Faker\Factory::create('ru_RU');
 
 try {
 
-$comment = new Comments(
+$comment = new Comment(
     UUID::random(),
     $post,
     $user,
     $faker->realText(rand(50, 300))
 );
+
+print_r($comment);
 
 $commentsRepository->save($comment);
 
@@ -43,7 +50,7 @@ $commentsRepository->save($comment);
     echo $err->getMessage();
 }
 
-
+*/
 
 //Создание Постов
 /*
